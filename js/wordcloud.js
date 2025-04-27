@@ -86,6 +86,9 @@ function initializeWordcloud(data) {
         }
     });
 
+    // Remove Narration lines
+    data = data.filter(d => d.character !== "Narration");
+
     const width = 800;
     const height = 600;
     let allWordData = data;
@@ -125,69 +128,81 @@ function initializeWordcloud(data) {
     function updateWordCloud() {
         const selectedCharacter = d3.select("#characterDropdown").property("value");
         const selectedSeason = d3.select("#seasonDropdown").property("value");
-        const selectedMode = d3.select("#modeDropdown").property("value"); // NEW
+        const selectedMode = d3.select("#modeDropdown").property("value");
     
+        const svg = d3.select("#wordcloud");
+        const width = 800;
+        const height = 600;
+    
+        // Fully clear old word cloud
+        svg.selectAll("*").remove();
+    
+        // Filter data
         let filtered = allWordData.filter(d => d.character === selectedCharacter);
     
         if (selectedSeason !== "all") {
             filtered = filtered.filter(d => {
-                const season = episodeSeasons[d.episode];
+                const season = episodeSeasons[d.episode.trim()];
                 return season === selectedSeason;
             });
         }
     
-        let text = filtered.map(d => d.line).join(' ').toLowerCase();
-        text = text.replace(/[^a-zA-Z\s]/g, ''); // Remove punctuation
+        // Tokenize words cleanly
+        let words = [];
+        filtered.forEach(d => {
+            let line = d.line;
+            line = line.replace(/^\([a-zA-Z\s]+\)\s*/, ''); // Remove (Narrating:), etc
+            line = line.toLowerCase();
+            line = line.replace(/[^a-zA-Z\s]/g, ' '); // Replace punctuation with space
+            const lineWords = line.split(/\s+/).filter(w => w.length > 2 && !stopwords.has(w));
+            words.push(...lineWords);
+        });
     
-        const words = text.split(/\s+/).filter(w => w.length > 2 && !stopwords.has(w));
+        // Build words or phrases
         let combined;
-    
         if (selectedMode === "words") {
-            // Only single words
             combined = words;
         } else {
-            // Only phrases (bigrams + trigrams)
             const bigrams = [];
+            const trigrams = [];
             for (let i = 0; i < words.length - 1; i++) {
                 bigrams.push(words[i] + " " + words[i+1]);
             }
-            const trigrams = [];
             for (let i = 0; i < words.length - 2; i++) {
                 trigrams.push(words[i] + " " + words[i+1] + " " + words[i+2]);
             }
             combined = bigrams.concat(trigrams);
         }
     
-        const wordFreq = d3.rollups(combined, v => v.length, d => d)
-            .map(([text, size]) => ({ text, size }))
-            .sort((a, b) => d3.descending(a.size, b.size))
-            .slice(0, 100); // Top 100
+        // Count words/phrases
+        const wordFreqFull = d3.rollups(combined, v => v.length, d => d)
+            .map(([text, trueCount]) => ({ text, trueCount }))
+            .sort((a, b) => d3.descending(a.trueCount, b.trueCount));
     
-        const maxFreq = d3.max(wordFreq, d => d.size);
+        const maxFreq = d3.max(wordFreqFull, d => d.trueCount);
     
-        const svg = d3.select("#wordcloud");
+        // Prepare for cloud layout
+        const wordFreq = wordFreqFull.slice(0, 100).map(d => ({
+            text: d.text,
+            trueCount: d.trueCount,
+            size: (d.trueCount / maxFreq) * 80 + 10 // Font size scaling
+        }));
     
-        // Fade out old cloud
-        svg.selectAll("g")
-          .transition()
-          .duration(500)
-          .style("opacity", 0)
-          .remove();
-    
+        // Generate cloud
         const layout = d3.layout.cloud()
             .size([width, height])
             .words(wordFreq)
             .padding(5)
             .rotate(() => ~~(Math.random() * 2) * 90)
-            .fontSize(d => (d.size / maxFreq) * 80 + 10)
+            .fontSize(d => d.size)
             .on("end", draw);
     
         layout.start();
     
         function draw(words) {
             const group = svg.append("g")
-                .attr("transform", `translate(${width/2},${height/2})`)
-                .style("opacity", 0); // Start invisible
+                .attr("transform", `translate(${width / 2},${height / 2})`)
+                .style("opacity", 0);
     
             const tooltip = d3.select("#tooltip_wordcloud");
     
@@ -202,8 +217,8 @@ function initializeWordcloud(data) {
                 .text(d => d.text)
                 .on("mouseover", function(event, d) {
                     tooltip.style("visibility", "visible")
-                        .style("opacity", 1)
-                        .html(`<strong>${selectedMode === "words" ? "Word" : "Phrase"}:</strong> ${d.text}<br><strong>Count:</strong> ${d.size}`);
+                           .style("opacity", 1)
+                           .html(`<strong>${selectedMode === "words" ? "Word" : "Phrase"}:</strong> ${d.text}<br><strong>Count:</strong> ${d.trueCount}`);
     
                     d3.select(this)
                       .attr("stroke", "black")
@@ -215,7 +230,7 @@ function initializeWordcloud(data) {
                 })
                 .on("mouseleave", function(event, d) {
                     tooltip.style("visibility", "hidden")
-                        .style("opacity", 0);
+                           .style("opacity", 0);
     
                     d3.select(this)
                       .attr("stroke", "none")
