@@ -202,7 +202,8 @@ function initializeWordcloud(data) {
                 .text(d => d.text)
                 .on("mouseover", function(event, d) {
                     tooltip.style("visibility", "visible")
-                           .html(`<strong>${selectedMode === "words" ? "Word" : "Phrase"}:</strong> ${d.text}<br><strong>Count:</strong> ${d.size}`);
+                        .style("opacity", 1)
+                        .html(`<strong>${selectedMode === "words" ? "Word" : "Phrase"}:</strong> ${d.text}<br><strong>Count:</strong> ${d.size}`);
     
                     d3.select(this)
                       .attr("stroke", "black")
@@ -213,7 +214,8 @@ function initializeWordcloud(data) {
                            .style("left", (event.pageX + 10) + "px");
                 })
                 .on("mouseleave", function(event, d) {
-                    tooltip.style("visibility", "hidden");
+                    tooltip.style("visibility", "hidden")
+                        .style("opacity", 0);
     
                     d3.select(this)
                       .attr("stroke", "none")
