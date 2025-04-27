@@ -16,6 +16,13 @@ d3.csv(
   })
   .catch((error) => console.error(error));
 
+// Load and initialize word cloud data
+d3.csv("data/gravity_falls_transcripts.csv")
+  .then((data) => {
+    initializeWordcloud(data); // Calls function from wordcloud.js
+  })
+  .catch((error) => console.error(error));
+
 let barchart;
 function onLinesEpisodesChanged() {
   let newVal = document.getElementById("linesEpisodes").value;
