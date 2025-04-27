@@ -33,7 +33,15 @@ function initializeWordcloud(data) {
         "Deputy Durland": "Deputy Durland",
         "Durland": "Deputy Durland",
         "Toby Determined": "Toby Determined",
-        "Toby": "Toby Determined"
+        "Toby": "Toby Determined",
+        "Bill": "Bill Cipher",
+        "Bill Cipher": "Bill Cipher",
+        "Pacifica": "Pacifica Northwest",
+        "Pacifica Northwest": "Pacifica Northwest",
+        "Old Man McGucket": "Old Man McGucket",
+        "McGucket": "Old Man McGucket",
+        "Blendin": "Blendin Blandin",
+        "Blendin Blandin": "Blendin Blandin"
     };
 
     const episodeSeasons = {
@@ -106,7 +114,11 @@ function initializeWordcloud(data) {
         "Gideon Gleeful",
         "Sheriff Blubs",
         "Deputy Durland",
-        "Toby Determined"
+        "Toby Determined",
+        "Bill Cipher",
+        "Pacifica Northwest",
+        "Old Man McGucket",
+        "Blendin Blandin",
     ];
 
     // Build Character Dropdown
