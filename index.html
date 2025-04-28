@@ -76,26 +76,46 @@
             </div>
         </div>
 
-        <h1>Word Cloud</h1>
-        <div id="wordcloud-controls">
-            <label for="characterDropdown">Character:</label>
-            <select id="characterDropdown"></select>
-
-            <label for="seasonDropdown">Season:</label>
-            <select id="seasonDropdown">
-                <option value="all">All Seasons</option>
-                <option value="1">Season 1</option>
-                <option value="2">Season 2</option>
-            </select>
-
-            <label for="modeDropdown">Mode:</label>
-            <select id="modeDropdown">
-            <option value="words">Words</option>
-            <option value="phrases">Phrases</option>
-            </select>
+        <div id="visualizations">
+    
+            <!-- Word Cloud Section -->
+            <div id="wordcloud-section">
+                <div id="wordcloud-controls">
+                    <label for="characterDropdown">Character:</label>
+                    <select id="characterDropdown"></select>
+        
+                    <label for="seasonDropdown">Season:</label>
+                    <select id="seasonDropdown">
+                        <option value="all">All Seasons</option>
+                        <option value="1">Season 1</option>
+                        <option value="2">Season 2</option>
+                    </select>
+        
+                    <label for="modeDropdown">Mode:</label>
+                    <select id="modeDropdown">
+                        <option value="words">Words</option>
+                        <option value="phrases">Phrases</option>
+                    </select>
+                </div>
+                <svg id="wordcloud" width="800" height="600"></svg>
+                <div id="tooltip_wordcloud"></div>
+            </div>
+        
+            <!-- Chord Diagram Section -->
+            <div id="chord-section">
+                <div id="chord-controls">
+                    <label for="chordSeasonDropdown">Season:</label>
+                    <select id="chordSeasonDropdown" style="width: 200px;">
+                        <option value="all">All Seasons</option>
+                        <option value="1">Season 1</option>
+                        <option value="2">Season 2</option>
+                    </select>
+                </div>
+                <div id="chord"></div>
+                <div id="tooltip_chord"></div>
+            </div>
+        
         </div>
-        <svg id="wordcloud" width="800" height="600"></svg>
-        <div id="tooltip_wordcloud"></div>
         
         <div id="tooltip"></div>
     </div>
@@ -107,5 +127,6 @@
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
     <script src="js/wordcloud.js"></script>
+    <script src="js/chorddiagram.js"></script>
 </body>
 </html>

@@ -78,3 +78,17 @@ d3.select('#sorting').on('click', d => {
   barchart.config.reverseOrder = true;
   barchart.updateVis();
 })
+
+let chorddiagram;
+
+d3.csv('data/gravity_falls_scenes.csv')
+  .then(data => {
+    chorddiagram = new ChordDiagram({ parentElement: '#chord', dataPath: 'data/gravity_falls_scenes.csv' });
+  })
+  .catch(error => console.error(error));
+
+d3.select('#chordSeasonDropdown').on('change', () => {
+  if (chorddiagram) {
+    chorddiagram.updateVis();
+  }
+});
