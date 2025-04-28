@@ -3,17 +3,17 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  
+
   .showSummary {
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
-  
+
   .characterPics {
     display: flex;
     justify-content: space-around;
-  
+
     .character {
       display: flex;
       flex-direction: column;
@@ -29,6 +29,7 @@ body {
   background: #f8f8f8;
   height: 100%;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -36,59 +37,76 @@ body {
   align-items: center;
   margin: 0;
   width: 100%;
+  height: 100%;
 }
+
 #chart {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 #footer {
   font-size: 11px;
   display: flex;
 }
+
 #footer .footer-col {
   flex: 1;
 }
+
 h1 {
   font-family: 'Lora', serif;
   font-size: 1.4rem;
 }
+
 .bar {
   fill: #f38874;
   shape-rendering: crispEdges;
 }
+
 .bar:hover {
   fill: #c15f45;
   transition: fill ease-in-out 200ms;
 }
+
 .axis-title {
   font-size: 1px;
 }
+
 .axis text {
   fill: #666;
   font-size: 12px;
 }
+
 .axis path {
   shape-rendering: crispEdges;
   stroke: #888;
 }
+
 .y-axis path {
   display: none;
 }
+
 .axis line {
   display: none;
 }
+
 .btn {
   font-size: 11px;
   color: #adadad;
 }
-#sorting:hover, #sorting:focus {
+
+#sorting:hover,
+#sorting:focus {
   text-decoration: none;
   box-shadow: none;
 }
+
 #sorting img {
   opacity: 0.8;
 }
+
 #tooltip {
   position: absolute;
   opacity: 0;
@@ -99,11 +117,13 @@ h1 {
   font-weight: 600;
   padding: 2px 8px;
 }
+
 .tooltip-label {
   font-weight: 500;
   font-size: 10px;
   color: #888;
 }
+
 #wordcloud-controls {
   margin: 20px 0;
   display: flex;
@@ -140,13 +160,15 @@ h1 {
   align-items: flex-start;
 }
 
-#wordcloud-section, #chord-section {
+#wordcloud-section,
+#chord-section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#wordcloud-controls, #chord-controls {
+#wordcloud-controls,
+#chord-controls {
   margin-bottom: 10px;
 }
 
@@ -168,6 +190,6 @@ h1 {
   font-size: 14px;
   pointer-events: none;
   opacity: 0.95;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }

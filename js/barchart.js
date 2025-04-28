@@ -67,16 +67,16 @@ class Barchart {
     // Append y-axis group
     vis.yAxisG = vis.chart.append("g").attr("class", "axis y-axis");
 
-   vis.yAxisLabel = vis.svg
-     .append("text")
-     .style("font-size", "")
-     .attr("class", "axis-title")
-     .attr("text-anchor", "middle")
-     .attr("transform", "rotate(-90)")
-     .attr("x", -vis.config.containerHeight / 2)
-     .attr("y", 30)
-     .text("Number of Lines");
-    
+    vis.yAxisLabel = vis.svg
+      .append("text")
+      .style("font-size", "")
+      .attr("class", "axis-title")
+      .attr("text-anchor", "middle")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -vis.config.containerHeight / 2)
+      .attr("y", 30)
+      .text("Number of Lines");
+
     vis.xAxisLabel = vis.svg
       .append("text")
       .attr("class", "axis-title")
@@ -139,8 +139,7 @@ class Barchart {
           .style("opacity", 1)
           // Format number with million and thousand separator
           .html(
-            `<p>${
-              d.name
+            `<p>${d.name
             }</p><div class="tooltip-label">Lines: </div>${d3.format(
               ","
             )(d.num_eps)}`
