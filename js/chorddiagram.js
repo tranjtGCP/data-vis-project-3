@@ -35,22 +35,22 @@ class ChordDiagram {
             "Dipper",
             "Mabel",
             "Grunkle Stan",
-            "Wendy",
             "Soos",
+            "Wendy",
             "Robbie",
             "Ford",
+            "Gideon",
             "Grenda",
             "Candy",
-            "Bill Cipher",
-            "Gideon"
-        ];
+            "Bill Cipher"
+          ];
         this.initVis();
     }
 
     initVis() {
         this.width = 800;
         this.height = 800;
-        this.innerRadius = Math.min(this.width, this.height) * 0.35;
+        this.innerRadius = Math.min(this.width, this.height) * 0.33;
         this.outerRadius = this.innerRadius * 1.1;
 
         this.svg = d3.select(this.parentElement)
