@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3 Interactive Bar Chart</title>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top">
+        <div class="showSummary">
+            <h1>Gravity Falls</h1>
+            <h5>Gravity Falls is an American cartoon that aired on Disney channels from 2012 to 2016. 
+                It is a mystery comedy that follows the lives of Dipper, Mabel, and Stan Pines along
+                with the paranormal activities that occur at the titular location.
+            </h5>
+            <h5>
+                The show ran for two seasons, with a total of 40 episodes. The main cast, consists of
+                twin siblings Dipper and Mabel, their great uncle Stan, their friends Wendy, Soos, Robbie,
+                and Ford.
+            </h5>
+            <div class="characterPics">
+                <div class="character">
+                    <img src="images/Dipper_Pines.png" height="200" width="130"/>
+                    <p>Dipper Pines</p>
+                </div>
+                <div class="character">
+                    <img src="images/Mabel_Pines.png" height="200" width="130"/>
+                    <p>Mabel Pines</p>
+                </div>
+                <div class="character">
+                    <img src="images/Gravity_Falls_-_Stan_Pines.png" height="200" width="250"/>
+                    <p>Stan Pines</p>
+                </div>
+                <div class="character">
+                    <img src="images/Wendy_Corduroy.webp" height="200" width="120"/>
+                    <p>Wendy</p>
+                </div>
+                <div class="character">
+                    <img src="images/Robbie.png" height="200" width="110"/>
+                    <p>Robbie</p>
+                </div>
+                <div class="character">
+                    <img src="images/Ford_Pines.png" height="200" width="110"/>
+                    <p>Ford</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1>Characters and their Appearances</h1>
+            
+            <select id="linesEpisodes" onchange={onLinesEpisodesChanged()}>
+                <option value="chars" selected>All characters</option>
+                <option value="vipChars">Main characters</option>
+            </select>
+            <svg id="chart"></svg>
+            <svg id="chart2"></svg>
+
+
+            
+            <div id="footer">
+                <div class="footer-col">
+                    <button type="button" class="btn btn-link btn-sm" id="sorting">
+                        <img src="images/sort-down.svg" alt="" width="14" height="14" title="Sort"> Reverse order
+                    </button>
+                </div>
+                <div class="footer-col text-right">
+                    <a href="https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/hlt-fst/pd-pl/Table.cfm" class="btn btn-link btn-sm">Source: statcan.gc.ca</a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="tooltip"></div>
+    </div>
+    
+    <script src="js/d3.v6.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/barchart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
