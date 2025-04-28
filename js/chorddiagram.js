@@ -128,6 +128,55 @@ class ChordDiagram {
             .style("stroke", d => d3.rgb(this.color(d.index)).darker())
             .attr("d", arc);
 
+        group.select("path")
+            .on("mouseover", (event, d) => {
+                const characterIndex = d.index;
+            
+                let totalConnections = 0;
+                let uniqueConnections = new Set();
+                let topConnection = null;
+                let topConnectionValue = 0;
+            
+                chord.filter(r => r.source.index !== r.target.index).forEach(r => {
+                if (r.source.index === characterIndex || r.target.index === characterIndex) {
+                    totalConnections += r.source.index === characterIndex ? r.source.value : r.target.value;
+                    uniqueConnections.add(r.source.index === characterIndex ? r.target.index : r.source.index);
+            
+                    const otherCharacter = r.source.index === characterIndex ? r.target.index : r.source.index;
+                    const value = r.source.index === characterIndex ? r.source.value : r.target.value;
+            
+                    if (value > topConnectionValue) {
+                    topConnectionValue = value;
+                    topConnection = this.mainCharacters[otherCharacter];
+                    }
+                }
+                });
+            
+                tooltip.style("visibility", "visible")
+                .html(`
+                    <strong>${this.mainCharacters[characterIndex]}</strong><br>
+                    Connections: ${uniqueConnections.size}<br>
+                    Total Shared Scenes: ${totalConnections}<br>
+                    Top Connection: ${topConnection} (${topConnectionValue} scenes)
+                `);
+            
+                ribbonsSelection
+                .style("opacity", r => 
+                    (r.source.index === characterIndex || r.target.index === characterIndex) ? 0.8 : 0.1
+                );
+            })
+            .on("mousemove", (event) => {
+              tooltip
+                .style("top", (event.pageY + 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
+            })
+            .on("mouseleave", () => {
+              tooltip.style("visibility", "hidden");
+          
+              ribbonsSelection
+                .style("opacity", 0.8);
+            });
+
         group.append("text")
             .each(d => { d.angle = (d.startAngle + d.endAngle) / 2; })
             .attr("dy", ".35em")
