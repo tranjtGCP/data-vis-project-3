@@ -150,8 +150,8 @@ h1 {
 }
 
 #wordcloud {
-  margin-top: 20px;
-  background: #fff;
+  margin-top: 50px;
+  /*background: #fff;*/
   border: 1px solid #ccc;
 }
 
@@ -216,4 +216,30 @@ h1 {
   opacity: 0.95;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 10;
+}
+
+#sharedwords-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2rem;
+  border-style: solid;
+  padding: 1rem;
+  /* justify-content: space-around; */
+  height: 650px;
+  width: 850px;
+}
+
+#tooltip_sharedwords {
+  position: absolute;
+  visibility: hidden;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }

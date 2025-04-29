@@ -100,7 +100,7 @@ function initializeWordcloud(data) {
     data = data.filter(d => d.character !== "Narration");
 
     const width = 800;
-    const height = 600;
+    const height = 650;
     let allWordData = data;
 
     const allowedCharacters = [
@@ -236,7 +236,7 @@ function initializeWordcloud(data) {
     
                     d3.select(this)
                       .attr("stroke", "black")
-                      .attr("stroke-width", 2);
+                      .attr("stroke-width", 1);
                 })
                 .on("mousemove", (event) => {
                     tooltip.style("top", (event.pageY + 10) + "px")

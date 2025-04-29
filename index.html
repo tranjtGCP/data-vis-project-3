@@ -164,6 +164,26 @@
         </div>
       </div>
 
+      <div id="sharedwords-section">
+        <h1>Shared Words Between Two Characters</h1>
+        <div id="sharedbar-controls">
+            <label for="charA">Character A:</label>
+            <select id="charA"></select>
+            
+            <label for="charB">Character B:</label>
+            <select id="charB"></select>
+            
+            <label for="sharedSeasonDropdown">Season:</label>
+            <select id="sharedSeasonDropdown">
+                <option value="all">All Seasons</option>
+                <option value="1">Season 1</option>
+                <option value="2">Season 2</option>
+            </select>
+        </div>
+        <svg id="sharedWordsChart" width="800" height="500"></svg>
+        <div id="tooltip_sharedwords"></div>
+    </div>
+
       <div id="tooltip"></div>
     </div>
 
@@ -171,6 +191,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/barchart.js"></script>
+    <script src="js/sharedwords.js"></script>
     <script src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
     <script src="js/wordcloud.js"></script>

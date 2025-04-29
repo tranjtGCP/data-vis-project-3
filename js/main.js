@@ -135,3 +135,7 @@ d3.select("#chordSeasonDropdown").on("change", () => {
     chorddiagram.updateVis();
   }
 });
+
+// Shared Words Bar Chart
+let sharedWords;
+sharedWords = new SharedWords({ parentElement: "#sharedWordsChart", dataPath: "data/gravity_falls_transcripts.csv" });
