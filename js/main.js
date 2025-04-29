@@ -71,10 +71,10 @@ d3.csv(
     barchart2.updateVis();
   })
   .catch((error) => console.error(error));
-  
+
 function onLinesEpisodes2Changed() {
-  let newVal = document.getElementById("linesEpisodes").value;
-  d3.csv("data/num_lines_" + newVal + ".csv")
+  let newVal = document.getElementById("episodeCountSelect").value;
+  d3.csv("data/num_eps_" + newVal + ".csv")
     .then((data) => {
       data.forEach((d) => {
         d.name = d.name;
@@ -84,13 +84,13 @@ function onLinesEpisodes2Changed() {
       // Sort data by population
       data.sort((a, b) => b.num_lines - a.num_lines);
 
-      if (document.getElementById("linesEpisodes").value == "chars") {
-        data = data.filter((d) => d.num_lines > 50);
+      if (document.getElementById("episodeCountSelect").value == "chars") {
+        data = data.filter((d) => d.num_lines > 2);
       }
 
       // Initialize chart and then show it
-      barchart.data = data;
-      barchart.updateVis();
+      barchart2.data = data;
+      barchart2.updateVis();
     })
     .catch((error) => console.error(error));
 }
