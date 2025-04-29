@@ -100,7 +100,7 @@ class Barchart {
 
     // Specificy x- and y-accessor functions
     vis.xValue = (d) => d.name;
-    vis.yValue = (d) => d.num_eps;
+    vis.yValue = (d) => d.num_lines;
 
     // Set the scale input domains
     vis.xScale.domain(vis.data.map(vis.xValue));
@@ -139,10 +139,11 @@ class Barchart {
           .style("opacity", 1)
           // Format number with million and thousand separator
           .html(
-            `<p>${d.name
-            }</p><div class="tooltip-label">Lines: </div>${d3.format(
-              ","
-            )(d.num_eps)}`
+            `<p>${
+              d.name
+            }</p><div class="tooltip-label">Lines: </div>${d3.format(",")(
+              d.num_lines
+            )}`
           );
       })
       .on("mousemove", (event) => {
