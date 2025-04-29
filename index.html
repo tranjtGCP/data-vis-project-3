@@ -123,10 +123,42 @@
         </div>
       </div>
 
+      <div class="areaDiv">
+        <div class="lineChart">
+          <div class="col-right">
+            <h1>Lines spoken</h1>
+            <svg id="area-chart"></svg>
+          </div>
+          <ul class="legend">
+            <li class="legend-btn" character="Wendy">
+              <span class="legend-symbol"></span> Wendy
+            </li>
+            <li class="legend-btn" character="Stan">
+              <span class="legend-symbol"></span> Stan
+            </li>
+            <li class="legend-btn" character="Soos">
+              <span class="legend-symbol"></span> Soos
+            </li>
+            <li class="legend-btn" character="Robbie">
+              <span class="legend-symbol"></span> Robbie
+            </li>
+            <li class="legend-btn" character="Mabel">
+              <span class="legend-symbol"></span> Mabel
+            </li>
+            <li class="legend-btn" character="Ford">
+              <span class="legend-symbol"></span> Ford
+            </li>
+            <li class="legend-btn" character="Dipper">
+              <span class="legend-symbol"></span> Dipper
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div id="visualizations">
         <!-- Word Cloud Section -->
         <div id="wordcloud-section">
-          <h1>Character's Common Words</h1>
+          <h1>Characters' Common Words</h1>
           <div id="wordcloud-controls">
             <label for="characterDropdown">Character:</label>
             <select id="characterDropdown"></select>
@@ -196,5 +228,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
     <script src="js/wordcloud.js"></script>
     <script src="js/chorddiagram.js"></script>
+    <script src="js/stackedAreaChart.js"></script>
   </body>
 </html>
