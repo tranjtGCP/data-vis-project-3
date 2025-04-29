@@ -92,8 +92,8 @@ class Barchart {
     this.config = {
       parentElement: _config.parentElement,
       containerWidth: _config.containerWidth || 1110,
-      containerHeight: _config.containerHeight || 300,
-      margin: _config.margin || { top: 10, right: 50, bottom: 100, left: 80 },
+      containerHeight: _config.containerHeight || 550,
+      margin: _config.margin || { top: 10, right: 50, bottom: 200, left: 80 },
       reverseOrder: _config.reverseOrder || false,
       tooltipPadding: _config.tooltipPadding || 15,
     };
@@ -152,26 +152,38 @@ class Barchart {
       .append("g")
       .attr("class", "axis x-axis")
       .attr("transform", `translate(0,${vis.height})`);
+    
+    vis.chart
+      .append("text")
+      .attr(
+        "transform",
+        "translate(" + vis.width / 2 + "," + vis.height / 0.75 + ")"
+      )
+      .style("text-anchor", "middle")
+      .style("font-size", "15px")
+      .style("fill", "black")
+      .attr("dy", "1em")
+      .text("Character");
 
     // Append y-axis group
     vis.yAxisG = vis.chart.append("g").attr("class", "axis y-axis");
 
     vis.yAxisLabel = vis.svg
       .append("text")
-      .style("font-size", "")
+      .style("font-size", "15")
       .attr("class", "axis-title")
-      .attr("text-anchor", "middle")
+      .attr("text-anchor", "start")
       .attr("transform", "rotate(-90)")
-      .attr("x", -vis.config.containerHeight / 2)
-      .attr("y", 30)
-      .text("Number of Lines");
+      .attr("x", -vis.config.containerHeight / 2 + 80)
+      .attr("y", 20)
+      .text("Count");
 
     vis.xAxisLabel = vis.svg
       .append("text")
       .attr("class", "axis-title")
       .attr("text-anchor", "middle")
       .attr("x", vis.config.containerWidth / 2)
-      .attr("y", vis.config.containerHeight + 10)
+      .attr("y", vis.config.containerHeight)
       .attr("transform", "rotate(-90)")
       .text("Character");
   }

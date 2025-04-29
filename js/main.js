@@ -92,7 +92,7 @@ function onLinesEpisodes2Changed() {
       data = data.filter((d) => d.name !== "Narration");
 
       if (document.getElementById("episodeCountSelect").value == "chars") {
-        data = data.filter((d) => d.num_lines > 2);
+        data = data.filter((d) => d.num_lines > 5);
       }
 
       // Initialize chart and then show it
