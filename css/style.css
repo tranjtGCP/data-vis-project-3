@@ -82,6 +82,10 @@
   background: #e1bf74;
 }
 
+.sharedWordsDiv {
+  display: flex;
+  justify-content: center;
+}
 
 .lineChart {
   .col-right {

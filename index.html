@@ -196,9 +196,11 @@
         </div>
       </div>
 
-      <div id="sharedwords-section">
-        <h1>Shared Words Between Two Characters</h1>
-        <div id="sharedbar-controls">
+      <div class="sharedWordsDiv">
+
+        <div id="sharedwords-section">
+          <h1>Shared Words Between Two Characters</h1>
+          <div id="sharedbar-controls">
             <label for="charA">Character A:</label>
             <select id="charA"></select>
             
@@ -207,16 +209,17 @@
             
             <label for="sharedSeasonDropdown">Season:</label>
             <select id="sharedSeasonDropdown">
-                <option value="all">All Seasons</option>
-                <option value="1">Season 1</option>
-                <option value="2">Season 2</option>
+              <option value="all">All Seasons</option>
+              <option value="1">Season 1</option>
+              <option value="2">Season 2</option>
             </select>
+          </div>
+          <svg id="sharedWordsChart" width="800" height="500"></svg>
+          <div id="tooltip_sharedwords"></div>
         </div>
-        <svg id="sharedWordsChart" width="800" height="500"></svg>
-        <div id="tooltip_sharedwords"></div>
-    </div>
-
-      <div id="tooltip"></div>
+        
+        <div id="tooltip"></div>
+      </div>
     </div>
 
     <script src="js/d3.v6.min.js"></script>

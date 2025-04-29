@@ -1,0 +1,281 @@
+character,episode,num_lines,
+Dipper,1,91,Tourist Trapped
+Dipper,2,82,The Legend of the Gobblewonker
+Dipper,3,75,Headhunters
+Dipper,4,49,The Hand That Rocks the Mabel
+Dipper,5,78,The Inconveniencing
+Dipper,6,82,Dipper vs. Manliness
+Dipper,7,67,Double Dipper
+Dipper,8,57,Irrational Treasure
+Dipper,9,90,The Time Traveler's Pig
+Dipper,10,86,Fight Fighters
+Dipper,11,61,Little Dipper
+Dipper,12,65,Summerween
+Dipper,13,41,Boss Mabel
+Dipper,14,75,Bottomless Pit!
+Dipper,15,48,The Deep End
+Dipper,16,94,Carpet Diem
+Dipper,17,39,Boyz Crazy
+Dipper,18,52,Land Before Swine
+Dipper,19,51,Dreamscaperers
+Dipper,20,51,Gideon Rises
+Dipper,21,62,Scary-oke
+Dipper,22,72,Into the Bunker
+Dipper,23,35,The Golf War
+Dipper,24,59,Sock Opera
+Dipper,25,16,Soos and the Real Girl
+Dipper,26,38,Little Gift Shop of Horrors
+Dipper,27,50,Society of the Blind Eye
+Dipper,28,52,Blendin's Game
+Dipper,29,25,The Love God
+Dipper,30,53,Northwest Mansion Mystery
+Dipper,31,45,Not What He Seems
+Dipper,32,16,A Tale of Two Stans
+Dipper,33,52,"Dungeons, Dungeons, and More Dungeons"
+Dipper,34,31,The Stanchurian Candidate
+Dipper,35,32,The Last Mabelcorn
+Dipper,36,49,Roadside Attraction
+Dipper,37,72,Dipper and Mabel vs. the Future
+Dipper,38,55,Weirdmageddon Part 1
+Dipper,39,64,Weirdmageddon 2: Escape From Reality
+Dipper,40,49,Weirdmageddon 3: Take Back The Falls
+Ford,1,0,Tourist Trapped
+Ford,2,0,The Legend of the Gobblewonker
+Ford,3,0,Headhunters
+Ford,4,0,The Hand That Rocks the Mabel
+Ford,5,0,The Inconveniencing
+Ford,6,0,Dipper vs. Manliness
+Ford,7,0,Double Dipper
+Ford,8,0,Irrational Treasure
+Ford,9,0,The Time Traveler's Pig
+Ford,10,0,Fight Fighters
+Ford,11,0,Little Dipper
+Ford,12,0,Summerween
+Ford,13,0,Boss Mabel
+Ford,14,0,Bottomless Pit!
+Ford,15,0,The Deep End
+Ford,16,0,Carpet Diem
+Ford,17,0,Boyz Crazy
+Ford,18,0,Land Before Swine
+Ford,19,0,Dreamscaperers
+Ford,20,0,Gideon Rises
+Ford,21,0,Scary-oke
+Ford,22,0,Into the Bunker
+Ford,23,0,The Golf War
+Ford,24,0,Sock Opera
+Ford,25,0,Soos and the Real Girl
+Ford,26,0,Little Gift Shop of Horrors
+Ford,27,0,Society of the Blind Eye
+Ford,28,0,Blendin's Game
+Ford,29,0,The Love God
+Ford,30,0,Northwest Mansion Mystery
+Ford,31,0,Not What He Seems
+Ford,32,69,A Tale of Two Stans
+Ford,33,37,"Dungeons, Dungeons, and More Dungeons"
+Ford,34,6,The Stanchurian Candidate
+Ford,35,44,The Last Mabelcorn
+Ford,36,0,Roadside Attraction
+Ford,37,47,Dipper and Mabel vs. the Future
+Ford,38,11,Weirdmageddon Part 1
+Ford,39,0,Weirdmageddon 2: Escape From Reality
+Ford,40,48,Weirdmageddon 3: Take Back The Falls
+Mabel,1,80,Tourist Trapped
+Mabel,2,62,The Legend of the Gobblewonker
+Mabel,3,68,Headhunters
+Mabel,4,77,The Hand That Rocks the Mabel
+Mabel,5,31,The Inconveniencing
+Mabel,6,34,Dipper vs. Manliness
+Mabel,7,32,Double Dipper
+Mabel,8,59,Irrational Treasure
+Mabel,9,73,The Time Traveler's Pig
+Mabel,10,30,Fight Fighters
+Mabel,11,64,Little Dipper
+Mabel,12,57,Summerween
+Mabel,13,78,Boss Mabel
+Mabel,14,52,Bottomless Pit!
+Mabel,15,65,The Deep End
+Mabel,16,88,Carpet Diem
+Mabel,17,58,Boyz Crazy
+Mabel,18,56,Land Before Swine
+Mabel,19,57,Dreamscaperers
+Mabel,20,37,Gideon Rises
+Mabel,21,38,Scary-oke
+Mabel,22,38,Into the Bunker
+Mabel,23,62,The Golf War
+Mabel,24,62,Sock Opera
+Mabel,25,31,Soos and the Real Girl
+Mabel,26,41,Little Gift Shop of Horrors
+Mabel,27,31,Society of the Blind Eye
+Mabel,28,57,Blendin's Game
+Mabel,29,52,The Love God
+Mabel,30,22,Northwest Mansion Mystery
+Mabel,31,49,Not What He Seems
+Mabel,32,14,A Tale of Two Stans
+Mabel,33,42,"Dungeons, Dungeons, and More Dungeons"
+Mabel,34,31,The Stanchurian Candidate
+Mabel,35,44,The Last Mabelcorn
+Mabel,36,21,Roadside Attraction
+Mabel,37,47,Dipper and Mabel vs. the Future
+Mabel,38,0,Weirdmageddon Part 1
+Mabel,39,41,Weirdmageddon 2: Escape From Reality
+Mabel,40,44,Weirdmageddon 3: Take Back The Falls
+Robbie,1,0,Tourist Trapped
+Robbie,2,0,The Legend of the Gobblewonker
+Robbie,3,0,Headhunters
+Robbie,4,0,The Hand That Rocks the Mabel
+Robbie,5,19,The Inconveniencing
+Robbie,6,0,Dipper vs. Manliness
+Robbie,7,2,Double Dipper
+Robbie,8,0,Irrational Treasure
+Robbie,9,15,The Time Traveler's Pig
+Robbie,10,37,Fight Fighters
+Robbie,11,0,Little Dipper
+Robbie,12,4,Summerween
+Robbie,13,0,Boss Mabel
+Robbie,14,0,Bottomless Pit!
+Robbie,15,0,The Deep End
+Robbie,16,0,Carpet Diem
+Robbie,17,19,Boyz Crazy
+Robbie,18,0,Land Before Swine
+Robbie,19,0,Dreamscaperers
+Robbie,20,2,Gideon Rises
+Robbie,21,0,Scary-oke
+Robbie,22,0,Into the Bunker
+Robbie,23,1,The Golf War
+Robbie,24,0,Sock Opera
+Robbie,25,0,Soos and the Real Girl
+Robbie,26,0,Little Gift Shop of Horrors
+Robbie,27,1,Society of the Blind Eye
+Robbie,28,1,Blendin's Game
+Robbie,29,19,The Love God
+Robbie,30,0,Northwest Mansion Mystery
+Robbie,31,0,Not What He Seems
+Robbie,32,0,A Tale of Two Stans
+Robbie,33,0,"Dungeons, Dungeons, and More Dungeons"
+Robbie,34,0,The Stanchurian Candidate
+Robbie,35,0,The Last Mabelcorn
+Robbie,36,0,Roadside Attraction
+Robbie,37,0,Dipper and Mabel vs. the Future
+Robbie,38,0,Weirdmageddon Part 1
+Robbie,39,0,Weirdmageddon 2: Escape From Reality
+Robbie,40,4,Weirdmageddon 3: Take Back The Falls
+Soos,1,11,Tourist Trapped
+Soos,2,36,The Legend of the Gobblewonker
+Soos,3,9,Headhunters
+Soos,4,8,The Hand That Rocks the Mabel
+Soos,5,5,The Inconveniencing
+Soos,6,3,Dipper vs. Manliness
+Soos,7,22,Double Dipper
+Soos,8,0,Irrational Treasure
+Soos,9,8,The Time Traveler's Pig
+Soos,10,23,Fight Fighters
+Soos,11,17,Little Dipper
+Soos,12,27,Summerween
+Soos,13,19,Boss Mabel
+Soos,14,42,Bottomless Pit!
+Soos,15,13,The Deep End
+Soos,16,19,Carpet Diem
+Soos,17,2,Boyz Crazy
+Soos,18,44,Land Before Swine
+Soos,19,35,Dreamscaperers
+Soos,20,19,Gideon Rises
+Soos,21,16,Scary-oke
+Soos,22,28,Into the Bunker
+Soos,23,9,The Golf War
+Soos,24,3,Sock Opera
+Soos,25,88,Soos and the Real Girl
+Soos,26,8,Little Gift Shop of Horrors
+Soos,27,22,Society of the Blind Eye
+Soos,28,38,Blendin's Game
+Soos,29,4,The Love God
+Soos,30,0,Northwest Mansion Mystery
+Soos,31,19,Not What He Seems
+Soos,32,5,A Tale of Two Stans
+Soos,33,5,"Dungeons, Dungeons, and More Dungeons"
+Soos,34,8,The Stanchurian Candidate
+Soos,35,0,The Last Mabelcorn
+Soos,36,5,Roadside Attraction
+Soos,37,4,Dipper and Mabel vs. the Future
+Soos,38,10,Weirdmageddon Part 2
+Soos,39,22,Weirdmageddon 2: Escape From Reality
+Soos,40,21,Weirdmageddon 3: Take Back The Falls
+Stan,1,28,Tourist Trapped
+Stan,2,34,The Legend of the Gobblewonker
+Stan,3,39,Headhunters
+Stan,4,27,The Hand That Rocks the Mabel
+Stan,5,11,The Inconveniencing
+Stan,6,41,Dipper vs. Manliness
+Stan,7,15,Double Dipper
+Stan,8,20,Irrational Treasure
+Stan,9,14,The Time Traveler's Pig
+Stan,10,27,Fight Fighters
+Stan,11,33,Little Dipper
+Stan,12,24,Summerween
+Stan,13,54,Boss Mabel
+Stan,14,45,Bottomless Pit!
+Stan,15,28,The Deep End
+Stan,16,44,Carpet Diem
+Stan,17,28,Boyz Crazy
+Stan,18,71,Land Before Swine
+Stan,19,48,Dreamscaperers
+Stan,20,32,Gideon Rises
+Stan,21,48,Scary-oke
+Stan,22,3,Into the Bunker
+Stan,23,13,The Golf War
+Stan,24,5,Sock Opera
+Stan,25,26,Soos and the Real Girl
+Stan,26,52,Little Gift Shop of Horrors
+Stan,27,1,Society of the Blind Eye
+Stan,28,6,Blendin's Game
+Stan,29,10,The Love God
+Stan,30,0,Northwest Mansion Mystery
+Stan,31,45,Not What He Seems
+Stan,32,66,A Tale of Two Stans
+Stan,33,41,"Dungeons, Dungeons, and More Dungeons"
+Stan,34,56,The Stanchurian Candidate
+Stan,35,4,The Last Mabelcorn
+Stan,36,62,Roadside Attraction
+Stan,37,6,Dipper and Mabel vs. the Future
+Stan,38,2,Weirdmageddon Part 2
+Stan,39,1,Weirdmageddon 2: Escape From Reality
+Stan,40,65,Weirdmageddon 3: Take Back The Falls
+Wendy,1,2,Tourist Trapped
+Wendy,2,0,The Legend of the Gobblewonker
+Wendy,3,1,Headhunters
+Wendy,4,5,The Hand That Rocks the Mabel
+Wendy,5,57,The Inconveniencing
+Wendy,6,1,Dipper vs. Manliness
+Wendy,7,24,Double Dipper
+Wendy,8,0,Irrational Treasure
+Wendy,9,29,The Time Traveler's Pig
+Wendy,10,15,Fight Fighters
+Wendy,11,0,Little Dipper
+Wendy,12,11,Summerween
+Wendy,13,16,Boss Mabel
+Wendy,14,1,Bottomless Pit!
+Wendy,15,12,The Deep End
+Wendy,16,1,Carpet Diem
+Wendy,17,18,Boyz Crazy
+Wendy,18,0,Land Before Swine
+Wendy,19,1,Dreamscaperers
+Wendy,20,3,Gideon Rises
+Wendy,21,6,Scary-oke
+Wendy,22,51,Into the Bunker
+Wendy,23,0,The Golf War
+Wendy,24,2,Sock Opera
+Wendy,25,8,Soos and the Real Girl
+Wendy,26,0,Little Gift Shop of Horrors
+Wendy,27,22,Society of the Blind Eye
+Wendy,28,5,Blendin's Game
+Wendy,29,22,The Love God
+Wendy,30,0,Northwest Mansion Mystery
+Wendy,31,1,Not What He Seems
+Wendy,32,1,A Tale of Two Stans
+Wendy,33,0,"Dungeons, Dungeons, and More Dungeons"
+Wendy,34,2,The Stanchurian Candidate
+Wendy,35,17,The Last Mabelcorn
+Wendy,36,0,Roadside Attraction
+Wendy,37,4,Dipper and Mabel vs. the Future
+Wendy,38,30,Weirdmageddon Part 3
+Wendy,39,13,Weirdmageddon 2: Escape From Reality
+Wendy,40,13,Weirdmageddon 3: Take Back The Falls

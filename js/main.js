@@ -136,6 +136,35 @@ d3.select("#chordSeasonDropdown").on("change", () => {
   }
 });
 
+let data, stackedAreaChart;
+// Line chart
+d3.csv("data/num_lines_per_episode.csv")
+  .then((_data) => {
+    _data.forEach((d) => {
+      d.character = d.character;
+      d.episode = d.episode;
+      d.num_lines = +d.num_lines;
+    });
+
+    data = _data;
+
+    // Initialize and render chart
+    stackedAreaChart = new StackedAreaChart(
+      { parentElement: "#area-chart" },
+      data
+    );
+    stackedAreaChart.updateVis();
+  })
+  .catch((error) => console.error(error));
+
+// Change sort order on bar charts
+d3.select("#sorting").on("click", (d) => {
+  barchart.config.reverseOrder = true;
+  barchart.updateVis();
+  barchart2.config.reverseOrder = true;
+  barchart2.updateVis();
+});
+
 // Shared Words Bar Chart
 let sharedWords;
 sharedWords = new SharedWords({ parentElement: "#sharedWordsChart", dataPath: "data/gravity_falls_transcripts.csv" });
