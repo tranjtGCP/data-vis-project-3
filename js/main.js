@@ -1,3 +1,5 @@
+let reversed = false;
+
 // Barchart 1
 let barchart;
 d3.csv(
@@ -103,10 +105,6 @@ function onLinesEpisodes2Changed() {
 }
 
 // Change sort order on bar charts
-var changeSortingOrder = d3.select("#change-sorting").on("click", function () {
-  reverse = !reverse;
-  updateVisualization();
-});
 d3.select("#sorting").on("click", (d) => {
   barchart.config.reverseOrder = true;
   barchart.updateVis();

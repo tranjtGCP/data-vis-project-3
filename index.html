@@ -86,27 +86,41 @@
       </div>
 
       <div class="container">
-        <h1>Lines spoken</h1>
-        <select id="linesEpisodes" onchange="{onLinesEpisodesChanged()}">
-          <option value="chars" selected>All characters</option>
-          <option value="vipChars">Main characters</option>
-        </select>
-        <svg id="chart"></svg>
+        <div class="barchart1">
+          <h1>Lines spoken</h1>
+          <select id="linesEpisodes" onchange="{onLinesEpisodesChanged()}">
+            <option value="chars" selected>All characters</option>
+            <option value="vipChars">Main characters</option>
+          </select>
+          <svg id="chart"></svg>
+        </div>
 
-        <h1>Episode appearance count</h1>
-        <select id="episodeCountSelect" onchange="{onLinesEpisodes2Changed()}">
-          <option value="chars" selected>All characters</option>
-          <option value="vipChars">Main characters</option>
-        </select>
-        <svg id="chart2"></svg>
+        <div class="barchart2">
+          <h1>Episode appearance count</h1>
+          <select
+            id="episodeCountSelect"
+            onchange="{onLinesEpisodes2Changed()}"
+          >
+            <option value="chars" selected>All characters</option>
+            <option value="vipChars">Main characters</option>
+          </select>
+          <svg id="chart2"></svg>
+        </div>
 
         <div id="footer">
-                <div class="footer-col">
-                    <button type="button" class="reverseButton" id="sorting">
-                        <img src="images/sort-down.svg" alt="" width="14" height="14" title="Sort"> Reverse order
-                    </button>
-                </div>
-            </div>
+          <div class="footer-col">
+            <button type="button" class="reverseButton" id="sorting">
+              <img
+                src="images/sort-down.svg"
+                alt=""
+                width="14"
+                height="14"
+                title="Sort"
+              />
+              Reverse order
+            </button>
+          </div>
+        </div>
       </div>
 
       <div id="visualizations">

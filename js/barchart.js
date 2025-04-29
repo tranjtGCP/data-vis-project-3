@@ -92,8 +92,8 @@ class Barchart {
     this.config = {
       parentElement: _config.parentElement,
       containerWidth: _config.containerWidth || 1110,
-      containerHeight: _config.containerHeight || 550,
-      margin: _config.margin || { top: 10, right: 50, bottom: 200, left: 80 },
+      containerHeight: _config.containerHeight || 400,
+      margin: _config.margin || { top: 10, right: 50, bottom: 150, left: 80 },
       reverseOrder: _config.reverseOrder || false,
       tooltipPadding: _config.tooltipPadding || 15,
     };
@@ -157,7 +157,7 @@ class Barchart {
       .append("text")
       .attr(
         "transform",
-        "translate(" + vis.width / 2 + "," + vis.height / 0.75 + ")"
+        "translate(" + vis.width / 2 + "," + vis.height / 0.70 + ")"
       )
       .style("text-anchor", "middle")
       .style("font-size", "15px")
@@ -178,14 +178,6 @@ class Barchart {
       .attr("y", 20)
       .text("Count");
 
-    vis.xAxisLabel = vis.svg
-      .append("text")
-      .attr("class", "axis-title")
-      .attr("text-anchor", "middle")
-      .attr("x", vis.config.containerWidth / 2)
-      .attr("y", vis.config.containerHeight)
-      .attr("transform", "rotate(-90)")
-      .text("Character");
   }
 
   /**
@@ -200,7 +192,6 @@ class Barchart {
       }
     });
 
-    // Reverse column order depending on user selection
     if (vis.config.reverseOrder) {
       vis.data.reverse();
     }
