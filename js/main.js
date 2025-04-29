@@ -1,3 +1,4 @@
+// Barchart 1
 let barchart;
 d3.csv(
   "data/num_lines_" + document.getElementById("linesEpisodes").value + ".csv"
@@ -25,13 +26,7 @@ d3.csv(
   })
   .catch((error) => console.error(error));
 
-// Load and initialize word cloud data
-d3.csv("data/gravity_falls_transcripts.csv")
-  .then((data) => {
-    initializeWordcloud(data); // Calls function from wordcloud.js
-  })
-  .catch((error) => console.error(error));
-
+// Rerender Barchart 1
 function onLinesEpisodesChanged() {
   let newVal = document.getElementById("linesEpisodes").value;
   d3.csv("data/num_lines_" + newVal + ".csv")
@@ -56,6 +51,7 @@ function onLinesEpisodesChanged() {
     .catch((error) => console.error(error));
 }
 
+// Barchart 2
 let barchart2;
 d3.csv(
   "data/num_eps_" + document.getElementById("episodeCountSelect").value + ".csv"
@@ -80,6 +76,7 @@ d3.csv(
   })
   .catch((error) => console.error(error));
 
+// Rerender Barchart 2
 function onLinesEpisodes2Changed() {
   let newVal = document.getElementById("episodeCountSelect").value;
   d3.csv("data/num_eps_" + newVal + ".csv")
@@ -105,22 +102,27 @@ function onLinesEpisodes2Changed() {
     .catch((error) => console.error(error));
 }
 
-/**
- * Event listener: change ordering
- */
-
+// Change sort order on bar charts
 var changeSortingOrder = d3.select("#change-sorting").on("click", function () {
   reverse = !reverse;
   updateVisualization();
 });
-
 d3.select("#sorting").on("click", (d) => {
   barchart.config.reverseOrder = true;
   barchart.updateVis();
+  barchart2.config.reverseOrder = true;
+  barchart2.updateVis();
 });
 
-let chorddiagram;
+// Load and initialize word cloud data
+d3.csv("data/gravity_falls_transcripts.csv")
+  .then((data) => {
+    initializeWordcloud(data); // Calls function from wordcloud.js
+  })
+  .catch((error) => console.error(error));
 
+// Chord diagram
+let chorddiagram;
 d3.csv("data/gravity_falls_scenes.csv")
   .then((data) => {
     chorddiagram = new ChordDiagram({
