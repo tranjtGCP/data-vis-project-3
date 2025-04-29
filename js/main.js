@@ -11,7 +11,13 @@ d3.csv(
     // Sort data by population
     data.sort((a, b) => b.num_lines - a.num_lines);
 
+    data = data.filter((d) => d.name !== "Narration");
+
     let test = document.getElementById("linesEpisodes").value;
+
+    if (document.getElementById("linesEpisodes").value == "chars") {
+      data = data.filter((d) => d.num_lines > 40);
+    }
 
     // Initialize chart and then show it
     barchart = new Barchart({ parentElement: "#chart" }, data);
@@ -37,6 +43,7 @@ function onLinesEpisodesChanged() {
 
       // Sort data by population
       data.sort((a, b) => b.num_lines - a.num_lines);
+      data = data.filter((d) => d.name !== "Narration");
 
       if (document.getElementById("linesEpisodes").value == "chars") {
         data = data.filter((d) => d.num_lines > 50);
@@ -61,9 +68,10 @@ d3.csv(
 
     // Sort data by population
     data.sort((a, b) => b.num_lines - a.num_lines);
+    data = data.filter((d) => d.name !== "Narration");
 
     if (document.getElementById("episodeCountSelect").value == "chars") {
-      data = data.filter((d) => d.num_lines > 2);
+      data = data.filter((d) => d.num_lines > 5);
     }
 
     // Initialize chart and then show it
@@ -84,6 +92,8 @@ function onLinesEpisodes2Changed() {
       // Sort data by population
       data.sort((a, b) => b.num_lines - a.num_lines);
 
+      data = data.filter((d) => d.name !== "Narration");
+
       if (document.getElementById("episodeCountSelect").value == "chars") {
         data = data.filter((d) => d.num_lines > 2);
       }
@@ -94,7 +104,6 @@ function onLinesEpisodes2Changed() {
     })
     .catch((error) => console.error(error));
 }
-
 
 /**
  * Event listener: change ordering

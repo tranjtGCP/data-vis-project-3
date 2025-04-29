@@ -1,3 +1,86 @@
+const characterMapBar = {
+  Dipper: "Dipper Pines",
+  "Dipper Pines": "Dipper Pines",
+  "Dipper and Mabel": "Dipper Pines",
+  Mabel: "Mabel Pines",
+  "Mabel Pines": "Mabel Pines",
+  Stan: "Grunkle Stan",
+  "Stan Pines": "Grunkle Stan",
+  "Grunkle Stan": "Grunkle Stan",
+  Soos: "Soos",
+  "Soos Ramirez": "Soos",
+  Wendy: "Wendy Corduroy",
+  "Wendy Corduroy": "Wendy Corduroy",
+  Robbie: "Robbie Valentino",
+  "Robbie Valentino": "Robbie Valentino",
+  "Ford Pines": "Ford",
+  "Stanford Pines": "Ford",
+  Ford: "Ford",
+  Grenda: "Grenda Grendinator",
+  "Grenda Grendinator": "Grenda Grendinator",
+  Candy: "Candy Chiu",
+  "Candy Chiu": "Candy Chiu",
+  Gideon: "Gideon Gleeful",
+  "Gideon Gleeful": "Gideon Gleeful",
+  "Sheriff Blubs": "Sheriff Blubs",
+  Blubs: "Sheriff Blubs",
+  "Deputy Durland": "Deputy Durland",
+  Durland: "Deputy Durland",
+  "Toby Determined": "Toby Determined",
+  Toby: "Toby Determined",
+  Bill: "Bill Cipher",
+  "Bill Cipher": "Bill Cipher",
+  Pacifica: "Pacifica Northwest",
+  "Pacifica Northwest": "Pacifica Northwest",
+  "Old Man McGucket": "Old Man McGucket",
+  McGucket: "Old Man McGucket",
+  Blendin: "Blendin Blandin",
+  "Blendin Blandin": "Blendin Blandin",
+};
+
+const episodeSeasons = {
+  "Tourist Trapped": "1",
+  "The Legend of the Gobblewonker": "1",
+  Headhunters: "1",
+  "The Hand That Rocks the Mabel": "1",
+  "The Inconveniencing": "1",
+  "Dipper vs. Manliness": "1",
+  "Double Dipper": "1",
+  "Irrational Treasure": "1",
+  "The Time Traveler's Pig": "1",
+  "Fight Fighters": "1",
+  "Little Dipper": "1",
+  Summerween: "1",
+  "Boss Mabel": "1",
+  "Bottomless Pit!": "1",
+  "The Deep End": "1",
+  "Carpet Diem": "1",
+  "Boyz Crazy": "1",
+  "Land Before Swine": "1",
+  Dreamscaperers: "1",
+  "Gideon Rises": "1",
+  "Scary-oke": "2",
+  "Into the Bunker": "2",
+  "The Golf War": "2",
+  "Sock Opera": "2",
+  "Soos and the Real Girl": "2",
+  "Little Gift Shop of Horrors": "2",
+  "Society of the Blind Eye": "2",
+  "Blendin's Game": "2",
+  "The Love God": "2",
+  "Northwest Mansion Mystery": "2",
+  "Not What He Seems": "2",
+  "A Tale of Two Stans": "2",
+  "Dungeons, Dungeons, and More Dungeons": "2",
+  "The Stanchurian Candidate": "2",
+  "The Last Mabelcorn": "2",
+  "Roadside Attraction": "2",
+  "Dipper and Mabel vs. the Future": "2",
+  "Weirdmageddon Part 1": "2",
+  "Weirdmageddon 2: Escape From Reality": "2",
+  "Weirdmageddon 3: Take Back The Falls": "2",
+};
+
 class Barchart {
   /**
    * Class constructor with basic chart configuration
@@ -23,6 +106,12 @@ class Barchart {
    */
   initVis() {
     let vis = this;
+
+    vis.data.forEach((d) => {
+      if (characterMap[d.name]) {
+        d.name = characterMapBar[d.name];
+      }
+    });
 
     // Calculate inner chart size. Margin specifies the space around the actual chart.
     vis.width =
@@ -93,6 +182,12 @@ class Barchart {
   updateVis() {
     let vis = this;
 
+    vis.data.forEach((d) => {
+      if (characterMap[d.name]) {
+        d.name = characterMap[d.name];
+      }
+    });
+
     // Reverse column order depending on user selection
     if (vis.config.reverseOrder) {
       vis.data.reverse();
@@ -141,7 +236,7 @@ class Barchart {
           .html(
             `<p>${
               d.name
-            }</p><div class="tooltip-label">Lines: </div>${d3.format(",")(
+            }</p><div class="tooltip-label">Count: </div>${d3.format(",")(
               d.num_lines
             )}`
           );
