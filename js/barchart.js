@@ -91,7 +91,7 @@ class Barchart {
     // Configuration object with defaults
     this.config = {
       parentElement: _config.parentElement,
-      containerWidth: _config.containerWidth || 1110,
+      containerWidth: _config.containerWidth || 810,
       containerHeight: _config.containerHeight || 400,
       margin: _config.margin || { top: 10, right: 50, bottom: 150, left: 80 },
       reverseOrder: _config.reverseOrder || false,
@@ -152,7 +152,7 @@ class Barchart {
       .append("g")
       .attr("class", "axis x-axis")
       .attr("transform", `translate(0,${vis.height})`);
-    
+
     vis.chart
       .append("text")
       .attr(
@@ -237,8 +237,7 @@ class Barchart {
           .style("opacity", 1)
           // Format number with million and thousand separator
           .html(
-            `<p>${
-              d.name
+            `<p>${d.name
             }</p><div class="tooltip-label">Count: </div>${d3.format(",")(
               d.num_lines
             )}`

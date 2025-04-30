@@ -19,7 +19,7 @@ d3.csv(
     let test = document.getElementById("linesEpisodes").value;
 
     if (document.getElementById("linesEpisodes").value == "chars") {
-      data = data.filter((d) => d.num_lines > 40);
+      data = data.filter((d) => d.num_lines > 50);
     }
 
     // Initialize chart and then show it
