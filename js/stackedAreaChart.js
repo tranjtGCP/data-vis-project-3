@@ -8,8 +8,8 @@ class StackedAreaChart {
     this.config = {
       parentElement: _config.parentElement,
       containerWidth: _config.containerWidth || 800,
-      containerHeight: _config.containerHeight || 400,
-      margin: _config.margin || { top: 25, right: 12, bottom: 30, left: 40 },
+      containerHeight: _config.containerHeight || 450,
+      margin: _config.margin || { top: 25, right: 12, bottom: 100, left: 80 },
       displayType: "absolute",
     };
     this.data = _data;
@@ -58,6 +58,16 @@ class StackedAreaChart {
       .attr("width", vis.config.containerWidth)
       .attr("height", vis.config.containerHeight);
 
+    vis.svg
+      .append("text")
+      .style("font-size", "15")
+      .attr("class", "axis-title")
+      .attr("text-anchor", "start")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -vis.config.containerHeight / 2 + 30)
+      .attr("y", 20)
+      .text("Line Count");
+
     // Append group element that will contain our actual chart (see margin convention)
     vis.chartContainer = vis.svg
       .append("g")
@@ -79,7 +89,7 @@ class StackedAreaChart {
 
     vis.stack = d3.stack().keys([0, 1, 2, 3, 4, 5, 6]);
 
-    
+    vis.chart.append("text").attr("transform", "translate(" + ((vis.width / 2) - 30) + "," + 380 + ")").text("Episode Number");
 
     /*
     // We need to make sure that the tracking area is on top of other chart elements
@@ -167,7 +177,7 @@ class StackedAreaChart {
       .attr("d", vis.area)
       .attr("fill", (d) => vis.colorScale(d.key));
 
-    
+
     /*
     vis.trackingArea
         .on('mouseenter', () => {
